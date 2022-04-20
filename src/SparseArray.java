@@ -31,6 +31,7 @@ public class SparseArray {
 				}
 			}
 		}
+		
 		// 2 根据sum创建稀疏数组【sum+1】【3】 稀疏数组格式：Row Col Value 第一列为 原数组的Row和Col+sum值
 		int[][] spareseArray = new int [sum+1][3];
 		spareseArray[0][0] = 11;
