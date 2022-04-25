@@ -48,9 +48,7 @@ public class Queen8 {
 		}
 		return true;
 	}
-	
-	
-	
+
 	// 写一个方法，可以将皇后的摆放位置输出
 	private void print() {
 		count++;
