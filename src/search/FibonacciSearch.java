@@ -7,8 +7,6 @@ public class FibonacciSearch {
 	public static void main(String[] args) {
 		int [] array = {1,8,10,89,1000,1234};
 		System.out.println(fibSearch(array,893));
-		
-		
 	}
 	// 因为后面mid=low+F(k-1)-1,需要用到斐波那锲数列，因此我们需要先获取到一个斐波那锲数列
 	// 递归方法得到一个斐波那锲数列
