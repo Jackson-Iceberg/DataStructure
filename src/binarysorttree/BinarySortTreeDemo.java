@@ -2,7 +2,7 @@ package binarysorttree;
 
 public class BinarySortTreeDemo {
 	public static void main(String[] args) {
-		int[] array = {7,3,10,12,5,1,9,0};
+		int[] array = {7,3,10,12,5,1,9};
 		BinarySortTree bst = new BinarySortTree();
 		// 循环的添加结点到二叉排序树
 		for(int i = 0;i<array.length;i++) {
@@ -13,11 +13,15 @@ public class BinarySortTreeDemo {
 		bst.infixOrder();
 		
 		// 测试一下删除叶子结点
-//		bst.deleNode(2);
-//		bst.deleNode(5);
-//		bst.deleNode(9);
-//		bst.deleNode(12);
+		bst.deleNode(2);
+		bst.deleNode(5);
+		bst.deleNode(9);
+		bst.deleNode(12);
+		bst.deleNode(7);
+		bst.deleNode(3);
 		bst.deleNode(10);
+		bst.deleNode(1);
+
 		System.out.println("删除结点后的二叉排序树");
 		bst.infixOrder();
 	}
@@ -90,16 +94,24 @@ class BinarySortTree{
 			else {
 				// 要删除的结点有左子结点
 				if(targetNode.left != null) {
-					if(parent.left.value == value) {
-						parent.left = targetNode.left;
-					}else { // targetNode是parent的右子结点
-						parent.right = targetNode.left;
+					if(parent != null) {						
+						if(parent.left.value == value) {
+							parent.left = targetNode.left;
+						}else { // targetNode是parent的右子结点
+							parent.right = targetNode.left;
+						}
+					}else {
+						root = targetNode.left;
 					}
 				}else { // 要删除的结点有右子结点
-					if(parent.left.value == value) {
-						parent.left = targetNode.right;
+					if(parent != null) {						
+						if(parent.left.value == value) {
+							parent.left = targetNode.right;
+						}else {
+							parent.right = targetNode.right;
+						}
 					}else {
-						parent.right = targetNode.right;
+						root = targetNode.right;
 					}
 				}
 			}
