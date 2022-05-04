@@ -9,7 +9,6 @@ public class BinarySearch {
 	}
 	
 	public static int binarySearch(int[] array,int targetNum) {
-		int size = array.length;
 		int left = 0;
 		int right = array.length-1;
 		int mid = (left+right)/2;
