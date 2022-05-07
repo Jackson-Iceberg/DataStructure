@@ -54,7 +54,10 @@ public class KruskalCase {
 				results[index++] = edges[i];
 			}
 		}
-		System.out.println("最小生成树为="+Arrays.toString(results));
+		System.out.println("最小生成树为");
+		for(int i = 0;i<index;i++) {
+			System.out.println(results[i]);
+		}
 	}
 	
 	public void print() {
